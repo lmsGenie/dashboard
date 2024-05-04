@@ -68,17 +68,12 @@ const MainLayout = ({ children }: MailLayoutProps) => {
   }, [location, tabs]);
 
   return (
-    <div className="grid grid-cols-[280px_auto]">
+    <div className="grid grid-cols-[280px_auto] bg-gray-50">
       {/* menu */}
-      <div className="h-[100vh] w-[280px] bg-gray-900 text-white">
+      <nav className="h-[100vh] w-[280px] bg-gray-900 text-white">
         <div className="flex items-center gap-2 p-5">
-          <Icon
-            id="EtutorLogo"
-            className="h-8 w-8 stroke-primary dark:stroke-primary-500"
-          />
-          <span className="hidden text-2xl font-semibold text-white lg:inline">
-            E-tutor
-          </span>
+          <Icon id="EtutorLogo" className="h-8 w-8 stroke-primary" />
+          <span className="text-2xl font-semibold text-white">E-tutor</span>
         </div>
         <ul>
           {tabs.map((tab) => {
@@ -108,10 +103,8 @@ const MainLayout = ({ children }: MailLayoutProps) => {
             );
           })}
         </ul>
-      </div>
-
-      {/* page */}
-      <div>{children}</div>
+      </nav>
+      <main>{children}</main>
     </div>
   );
 };
